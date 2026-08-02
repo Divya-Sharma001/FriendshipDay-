@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Friendship Day 💙</title>
+
+    <meta name="description"
+        content="Happy Friendship Day! Thank you for always being there. Friends like you make life beautiful. 💙">
+
+    <meta property="og:title" content="Happy Friendship Day 💙">
+    <meta property="og:description" content="A little surprise for the best friend ever! 🤝">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200">
+
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            font-family: 'Poppins', sans-serif;
+            transition: .8s;
+            overflow: hidden;
+        }
+
+        #parentElement {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            width: 220px;
+            height: 55px;
+            border: none;
+            border-radius: 50px;
+            margin: 10px;
+            background: white;
+            color: #0d6efd;
+            font-weight: bold;
+            font-size: 18px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #0d6efd;
+            color: white;
+            transform: scale(1.08);
+        }
+
+        #showMessage {
+            display: none;
+            text-align: center;
+        }
+
+        #showMessage h1 {
+            font-size: 52px;
+            margin-top: 20px;
+        }
+
+        #showMessage p {
+            font-size: 24px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .ml6 {
+            position: relative;
+            font-weight: 700;
+        }
+
+        .ml6 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .ml6 .letter {
+            display: inline-block;
+            line-height: 1em;
+        }
+
+        @media(max-width:768px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .btn {
+                width: 180px;
+                height: 50px;
+            }
+
+            #showMessage h1 {
+                font-size: 36px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- First Screen -->
+
+    <div id="parentElement">
+
+        <div class="d-flex justify-content-center">
+
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_touohxv0.json" background="transparent"
+                speed="1" style="width:300px;height:300px" loop autoplay>
+            </lottie-player>
+
+        </div>
+
+        <h1>Happy Friendship Day! 💙</h1>
+
+        <p>
+            Thank you for filling my life with laughter,
+            happiness and unforgettable memories.
+            I'm lucky to have a friend like you! 🤝
+        </p>
+
+        <div>
+            <button class="btn" onclick="celebrate()">
+                Yes! Best Friend Forever 💙
+            </button>
+
+            <button class="btn" onclick="celebrate()">
+                Obviously! Bestest Friend Forever  🤝💙
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Second Screen -->
+
+    <div id="showMessage">
+
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json" background="transparent"
+            speed="1" style="width:320px;height:320px" loop autoplay>
+        </lottie-player>
+
+        <h1 class="ml6">
+            <span class="text-wrapper">
+                <span class="letters">
+                    Friends Forever! 🤝
+                </span>
+            </span>
+        </h1>
+
+        <p style="margin-top:30px;">
+
+            💙 Happy Friendship Day! 💙
+
+            <br><br>
+
+            Thank you for always standing by my side,
+            making me smile,
+            supporting me during difficult times,
+            and creating countless unforgettable memories.
+
+            <br><br>
+
+            No matter where life takes us,
+            our friendship will always remain special.
+
+            ✨ Cheers to many more adventures together! ✨
+
+        </p>
+
+    </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script>
+
+        const parentElement = document.getElementById("parentElement");
+        const showMessage = document.getElementById("showMessage");
+
+        function celebrate() {
+
+            parentElement.style.display = "none";
+
+            showMessage.style.display = "block";
+
+            document.body.style.background =
+                "linear-gradient(135deg,#00c6ff,#0072ff)";
+
+        }
+
+        var textWrapper = document.querySelector(".ml6 .letters");
+
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({
+            loop: true
+        })
+
+            .add({
+
+                targets: ".ml6 .letter",
+
+                translateY: ["1.2em", 0],
+
+                translateZ: 0,
+
+                duration: 800,
+
+                delay: (el, i) => 50 * i
+
+            })
+
+            .add({
+
+                targets: ".ml6",
+
+                opacity: 0,
+
+                duration: 1200,
+
+                easing: "easeOutExpo",
+
+                delay: 1500
+
+            });
+
+    </script>
+
+</body>
+
+</html>
